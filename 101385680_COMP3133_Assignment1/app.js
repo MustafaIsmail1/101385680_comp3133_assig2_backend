@@ -9,7 +9,11 @@ async function startServer() {
     const app = express();
     const apolloServer = new ApolloServer({
         typeDefs,
-        resolvers
+        resolvers,
+        introspection: true,
+        playground: {
+            endpoint: '/graphql',
+        },
     });
 
     await apolloServer.start();
@@ -21,6 +25,5 @@ async function startServer() {
     const port = 3000;
     app.listen(port, () => console.log(`Server is up at port ${port}/graphql`));
 }
-
 
 startServer();
