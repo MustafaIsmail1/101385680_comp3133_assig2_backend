@@ -20,7 +20,7 @@ async function startServer() {
     mongoose.set('strict', true); 
     await mongoose.connect('mongodb+srv://mustafaismailmab:mumu123@cluster0.kmefq4m.mongodb.net/comp3133_assignment1?retryWrites=true&w=majority');
     console.log('Update: Database is connected to the project.');
-    const port = 3000;
+    const port = 4000;
     app.listen(port, () => console.log(`Server is up at port ${port}/graphql`));
 }
 
